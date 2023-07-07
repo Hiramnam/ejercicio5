@@ -1,0 +1,60 @@
+Me calficó Banca Perez Tobón
+calificación:8.
+Navarro Moreno Carlos Hiram
+
+
+
+
+package org.generation.revision;
+
+public class MangosNaranjas {
+
+	
+		
+		private int mangos;
+		private int naranjas;
+		public MangosNaranjas(int mangos, int naranjas) {
+			this.mangos = mangos;
+			this.naranjas = naranjas;
+		}
+		
+		public void imprimir() {
+			int cajasMangos = mangos;
+			int cajasNaranjas = naranjas;
+			
+
+	        for (int i = 2; i <= Math.min(mangos, naranjas); i++) {
+	            if (mangos % i == 0 && naranjas % i == 0) {
+	                cajasMangos /= i;
+	                cajasNaranjas /= i;
+	            }
+		}
+	        System.out.println("Número de cajas: " + cajasMangos);
+	        System.out.println("Número de mangos por caja: " + (mangos / cajasMangos));
+	        System.out.println("Número de naranjas por caja: " + (naranjas / cajasNaranjas));
+	}
+}
+
+	
+////////////////////////////////////////
+
+package org.generation.revision;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		   Scanner scanner = new Scanner(System.in);
+
+	        System.out.print("Ingrese el número de mangos: ");
+	        int numMangos = scanner.nextInt();
+
+	        System.out.print("Ingrese el número de naranjas: ");
+	        int numNaranjas = scanner.nextInt();
+	        MangosNaranjas mn = new MangosNaranjas(numMangos, numNaranjas);
+	        mn.imprimir(); 
+	}
+
+}
